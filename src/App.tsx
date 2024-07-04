@@ -1,10 +1,14 @@
 
 import './App.css'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 function App() {
 
     const [value, setValue] = useState<number>(0)
+
+    useEffect(()=>{
+     localStorage.setItem('counterValue', JSON.stringify(value))
+    },[value])
 
     const incHandler = () => {
         setValue(value + 1)
@@ -13,7 +17,7 @@ function App() {
         setValue(value - 1)
     }
 
-
+// TODO: add setToSessionStorage
     const setToLocalStorageHandler = () => {
         localStorage.setItem('counterValue', JSON.stringify(value))
         localStorage.setItem('counterValue+1', JSON.stringify(value+1))
