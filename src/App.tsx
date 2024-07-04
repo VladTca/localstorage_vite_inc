@@ -29,6 +29,10 @@ function App() {
         localStorage.clear()
         setValue(0)
     }
+    const removeItemFromLocalStorageHandler = () => {
+        localStorage.removeItem('counterValue+1')
+        setValue(0)
+    }
   return (
       <div className="App">
           <h1>{value}</h1>
@@ -36,7 +40,8 @@ function App() {
           <button onClick={decHandler}>-</button>
           <button onClick={setToLocalStorageHandler}>setToLocalStorage</button>
           <button onClick={getFromLocalStorageHandler}>getFromLocalStorage</button>
-          <button onClick={clearLocalStorageHandler}>clerarLocalStorage</button>
+          <button onClick={clearLocalStorageHandler}>clearLocalStorage</button>
+          <button onClick={removeItemFromLocalStorageHandler}>removeItemFromLocalStorage</button>
       </div>
   )
 }
