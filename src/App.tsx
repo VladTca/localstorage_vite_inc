@@ -17,6 +17,7 @@ function App() {
     const setToLocalStorageHandler = () => {
         localStorage.setItem('counterValue', JSON.stringify(value))
         localStorage.setItem('counterValue+1', JSON.stringify(value+1))
+        sessionStorage.setItem('counterValue', JSON.stringify(value))
     }
 
     const getFromLocalStorageHandler = () => {
